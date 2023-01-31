@@ -12,7 +12,6 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -69,20 +68,17 @@ public class PickpocketListener implements Listener {
 
         item = contents.get(random);
         if(item == null || item.getType() == Material.AIR) {
-            System.out.println("Item is null!");
             return null;
         }
 
         // find the item in the inventory and remove it
         for(ItemStack i : clicked.getInventory().getContents()) {
             if(i != null && i.equals(item)) {
-                System.out.println("Found item in inventory! " + i);
                 i.setAmount(0);
                 break;
             }
         }
 
-        System.out.println("Returning: " + item);
         return item;
     }
 }
