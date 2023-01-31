@@ -1,0 +1,4 @@
+name: Pickpocket
+version: '${project.version}'
+main: tech.adelemphii.pickpocket.Pickpocket
+api-version: 1.16
